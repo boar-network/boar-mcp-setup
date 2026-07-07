@@ -1,11 +1,11 @@
 # Boar blockchain MCP
 
-**Free, keyless MCP server with 50 read-only blockchain tools across Bitcoin, Ethereum, and Mezo. No local installation required.**
+**Free, keyless MCP server with 65 read-only blockchain tools across Bitcoin, Ethereum, and Mezo. No local installation required.**
 
 ![Remote MCP](https://img.shields.io/badge/Remote_MCP-blue)
 ![No API Key](https://img.shields.io/badge/No_API_Key-green)
 ![Read-Only](https://img.shields.io/badge/Read--Only-brightgreen)
-![50 Tools](https://img.shields.io/badge/50_Tools-orange)
+![65 Tools](https://img.shields.io/badge/65_Tools-orange)
 ![3 Chains](https://img.shields.io/badge/Bitcoin_·_Ethereum_·_Mezo-purple)
 
 | Registry | Basic | Advanced |
@@ -106,8 +106,8 @@ See the full [Prompt Cookbook](docs/prompt-cookbook.md) for 6 detailed agent wor
 
 | Endpoint | URL | Tools | Best For |
 |----------|-----|-------|----------|
-| **Basic** | `https://mcp.boar.network/basic` | 37 | Balance checks, transaction lookups, block data, token info, ENS, ABI fetch |
-| **Advanced** | `https://mcp.boar.network/advanced` | 13 | Contract calls, ABI decoding, revert analysis, calldata encoding, Multicall3 |
+| **Basic** | `https://mcp.boar.network/basic` | 46 | Balance checks, transaction lookups, block data, token info, ENS, ABI fetch |
+| **Advanced** | `https://mcp.boar.network/advanced` | 19 | Contract calls, ABI decoding, revert analysis, calldata encoding, Multicall3 |
 
 Start with `/basic`. Add `/advanced` when you need smart contract interaction or transaction debugging. [Which should I use?](docs/basic-vs-advanced.md)
 
@@ -126,7 +126,7 @@ Start with `/basic`. Add `/advanced` when you need smart contract interaction or
 | `eth_call` | Ethereum | Read-only smart contract call |
 | `eth_multicall` | Ethereum | Batch contract reads via Multicall3 |
 
-Full tool reference: [Basic tools (37)](docs/basic-tools.md) · [Advanced tools (13)](docs/advanced-tools.md)
+Full tool reference: [Basic tools (46)](docs/basic-tools.md) · [Advanced tools (19)](docs/advanced-tools.md)
 
 ## ⛓️ Chains Supported
 
@@ -134,12 +134,13 @@ Full tool reference: [Basic tools (37)](docs/basic-tools.md) · [Advanced tools 
 |-------|---------|-------|
 | Bitcoin | Mainnet | 7 |
 | Bitcoin | Testnet3 | 7 |
-| Ethereum | Mainnet | 15 |
-| Mezo | Mainnet | 8 |
+| Ethereum | Mainnet | 14 |
+| Mezo | Mainnet | 9 |
+| Mezo | Testnet | 9 |
 | Cross-chain | — | 4 (selector lookup, ABI fetch, ENS forward + reverse) |
-| Advanced (ETH + Mezo) | — | 13 (contract calls, decoders, encoding, multicall) |
+| Advanced (ETH + Mezo + Mezo testnet) | — | 19 (contract calls, decoders, encoding, multicall) |
 
-**Mezo** is a Bitcoin-first blockchain built on Cosmos SDK with EVM compatibility. All Ethereum EVM tools have Mezo equivalents — same interface, different chain.
+**Mezo** is a Bitcoin-first blockchain built on Cosmos SDK with EVM compatibility. All Ethereum EVM tools have Mezo equivalents — same interface, different chain. Mezo testnet mirrors mainnet with full tool parity (`mezo_testnet_` prefix), following the same mainnet/testnet split as Bitcoin.
 
 ## ⚙️ How It Works
 
@@ -162,13 +163,16 @@ Yes. Configure them as two separate MCP servers in your client. See [Basic vs Ad
 **Does it support Bitcoin testnet?**
 Yes. All 7 Bitcoin tools have `btc_testnet_` equivalents for testnet3.
 
+**Does it support Mezo testnet?**
+Yes. All 9 basic and 6 advanced Mezo tools have `mezo_testnet_` equivalents.
+
 **Who built this?**
 [Boar Network](https://boar.network).
 
 ## 📚 Documentation
 
-- [Basic Tools Reference (37 tools)](docs/basic-tools.md)
-- [Advanced Tools Reference (13 tools)](docs/advanced-tools.md)
+- [Basic Tools Reference (46 tools)](docs/basic-tools.md)
+- [Advanced Tools Reference (19 tools)](docs/advanced-tools.md)
 - [Basic vs Advanced Guide](docs/basic-vs-advanced.md)
 - [Prompt Cookbook — 6 Agent Workflows](docs/prompt-cookbook.md)
 

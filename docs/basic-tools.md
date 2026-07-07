@@ -1,6 +1,6 @@
 # Basic Tools Reference
 
-**Endpoint:** `https://mcp.boar.network/basic` — 37 tools
+**Endpoint:** `https://mcp.boar.network/basic` — 46 tools
 
 All tools are read-only. No authentication required.
 
@@ -203,6 +203,24 @@ Get ERC-20 token metadata on Mezo. Same interface as `eth_get_token_info`.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `token` | string | Yes | ERC-20 token contract address |
+
+---
+
+## Mezo Testnet (9 tools)
+
+All Mezo tools have testnet equivalents with a `mezo_testnet_` prefix. Same parameters and behavior, different network. Follows the same mainnet/testnet split as Bitcoin.
+
+| Mainnet Tool | Testnet Tool |
+|-------------|-------------|
+| `mezo_get_balance` | `mezo_testnet_get_balance` |
+| `mezo_get_block` | `mezo_testnet_get_block` |
+| `mezo_get_transaction` | `mezo_testnet_get_transaction` |
+| `mezo_get_transaction_receipt` | `mezo_testnet_get_transaction_receipt` |
+| `mezo_get_logs` | `mezo_testnet_get_logs` |
+| `mezo_get_code` | `mezo_testnet_get_code` |
+| `mezo_gas_price` | `mezo_testnet_gas_price` |
+| `mezo_get_token_balance` | `mezo_testnet_get_token_balance` |
+| `mezo_get_token_info` | `mezo_testnet_get_token_info` |
 
 ---
 

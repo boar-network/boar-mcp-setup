@@ -1,10 +1,10 @@
 # Boar Blockchain MCP
 
-This repository is the source of truth for **Boar blockchain MCP** - a free, keyless remote MCP server exposing 50 read-only blockchain tools across Bitcoin, Ethereum, and Mezo. No local installation required.
+This repository is the source of truth for **Boar blockchain MCP** - a free, keyless remote MCP server exposing 65 read-only blockchain tools across Bitcoin, Ethereum, and Mezo (mainnet and testnet). No local installation required.
 
 The server runs on Cloudflare Workers and is available at:
-- Basic endpoint (37 tools): `https://mcp.boar.network/basic`
-- Advanced endpoint (13 tools): `https://mcp.boar.network/advanced`
+- Basic endpoint (46 tools): `https://mcp.boar.network/basic`
+- Advanced endpoint (19 tools): `https://mcp.boar.network/advanced`
 
 All tools are strictly read-only. No transaction signing, no wallet access, no state mutation.
 

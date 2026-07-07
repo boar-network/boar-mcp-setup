@@ -2,7 +2,7 @@
 
 Boar blockchain MCP exposes two endpoints with **disjoint tool sets** — no overlap between them.
 
-## /basic — 37 tools
+## /basic — 46 tools
 
 Single-RPC tools for straightforward blockchain queries:
 
@@ -15,15 +15,15 @@ Single-RPC tools for straightforward blockchain queries:
 - **ENS** — name resolution and reverse lookups
 - **ABI fetch** — Sourcify verified ABI retrieval, function selector lookups
 
-Covers Bitcoin (mainnet + testnet3), Ethereum, and Mezo.
+Covers Bitcoin (mainnet + testnet3), Ethereum, and Mezo (mainnet + testnet).
 
 **Best for:** most users. Handles the majority of blockchain data queries.
 
-## /advanced — 13 tools
+## /advanced — 19 tools
 
 Multi-step workflow tools for contract interaction and debugging:
 
-- **Contract calls** — `eth_call` / `mezo_call` with automatic ABI resolution
+- **Contract calls** — `eth_call` / `mezo_call` / `mezo_testnet_call` with automatic ABI resolution
 - **Revert decoding** — human-readable error extraction from failed calls
 - **ABI decoders** — decode calldata, return data, and event logs
 - **Calldata encoding** — build calldata from function name and parameters
@@ -41,7 +41,7 @@ Each endpoint adds its tool descriptions to the LLM context window:
 
 | Endpoint | Tools | Context Impact |
 |----------|-------|----------------|
-| `/basic` | 37 | Larger footprint |
-| `/advanced` | 13 | Smaller footprint |
+| `/basic` | 46 | Larger footprint |
+| `/advanced` | 19 | Smaller footprint |
 
 **Recommendation:** Start with `/basic` to cover common queries. Add `/advanced` as a second server when you need contract interaction or debugging tools. This keeps context usage minimal until the advanced capabilities are needed.

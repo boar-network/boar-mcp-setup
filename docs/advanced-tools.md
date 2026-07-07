@@ -1,6 +1,6 @@
 # Advanced Tools Reference
 
-**Endpoint:** `https://mcp.boar.network/advanced` — 13 tools
+**Endpoint:** `https://mcp.boar.network/advanced` — 19 tools
 
 All tools are read-only. No authentication required. These tools handle complex workflows: contract calls, ABI decoding, calldata encoding, and batch reads.
 
@@ -22,6 +22,17 @@ Execute a read-only smart contract call on Ethereum mainnet. Returns hex-encoded
 ### `mezo_call`
 
 Execute a read-only smart contract call on Mezo. Same interface as `eth_call`.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `to` | string | Yes | Contract address (0x-prefixed) |
+| `data` | string | Yes | ABI-encoded function call data (0x-prefixed) |
+| `from` | string | No | Sender address (optional, for context) |
+| `block` | string | No | Block to query (default: `"latest"`) |
+
+### `mezo_testnet_call`
+
+Execute a read-only smart contract call on Mezo testnet. Same interface as `eth_call`.
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
@@ -58,6 +69,15 @@ Decode raw EVM revert data on Mezo. Same interface as `eth_decode_revert`.
 | `revert_data` | string | Yes | Raw revert data (0x-prefixed hex) |
 | `abi` | string or array | No | Contract ABI for custom errors |
 
+### `mezo_testnet_decode_revert`
+
+Decode raw EVM revert data on Mezo testnet. Same interface as `eth_decode_revert`.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `revert_data` | string | Yes | Raw revert data (0x-prefixed hex) |
+| `abi` | string or array | No | Contract ABI for custom errors |
+
 ---
 
 ## ABI Decoding
@@ -74,6 +94,15 @@ Decode raw calldata into function name and typed arguments using a provided ABI 
 ### `mezo_decode_calldata`
 
 Decode raw calldata on Mezo. Same interface as `eth_decode_calldata`.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `calldata` | string | Yes | Raw calldata (0x-prefixed hex) |
+| `abi` | string or array | Yes | Contract ABI |
+
+### `mezo_testnet_decode_calldata`
+
+Decode raw calldata on Mezo testnet. Same interface as `eth_decode_calldata`.
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
@@ -100,6 +129,16 @@ Decode raw return data on Mezo. Same interface as `eth_decode_return`.
 | `abi` | string or array | Yes | Contract ABI |
 | `function_name` | string | Yes | Function name to decode against |
 
+### `mezo_testnet_decode_return`
+
+Decode raw return data on Mezo testnet. Same interface as `eth_decode_return`.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `data` | string | Yes | Raw return data (0x-prefixed hex) |
+| `abi` | string or array | Yes | Contract ABI |
+| `function_name` | string | Yes | Function name to decode against |
+
 ### `eth_decode_log`
 
 Decode a raw event log (topics + data) into named fields using a provided ABI on Ethereum. Pure computation — no RPC call needed.
@@ -113,6 +152,16 @@ Decode a raw event log (topics + data) into named fields using a provided ABI on
 ### `mezo_decode_log`
 
 Decode a raw event log on Mezo. Same interface as `eth_decode_log`.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `topics` | array | Yes | Log topics array |
+| `data` | string | Yes | Log data field (0x-prefixed hex) |
+| `abi` | string or array | Yes | Contract ABI |
+
+### `mezo_testnet_decode_log`
+
+Decode a raw event log on Mezo testnet. Same interface as `eth_decode_log`.
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
@@ -160,6 +209,14 @@ Each call object:
 ### `mezo_multicall`
 
 Batch reads on Mezo via Multicall3. Same interface as `eth_multicall`.
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `calls` | array | Yes | Array of call objects (at least 1) |
+
+### `mezo_testnet_multicall`
+
+Batch reads on Mezo testnet via Multicall3. Same interface as `eth_multicall`.
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|

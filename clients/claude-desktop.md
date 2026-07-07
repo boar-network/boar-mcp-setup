@@ -42,7 +42,7 @@ Add to your config file (create it if it doesn't exist):
 ## Verify
 
 1. Restart Claude Desktop (fully quit and reopen).
-2. Look for the hammer icon in the chat input area — it should show **37 tools** (basic) or **50 tools** (both).
+2. Look for the hammer icon in the chat input area — it should show **46 tools** (basic) or **65 tools** (both).
 3. Try a prompt: **"What is the ETH balance of vitalik.eth?"**
 
 ## Can't connect? (Team/Enterprise plans)

@@ -1,7 +1,7 @@
 {
   "name": "boar-blockchain-mcp",
-  "version": "0.7.0",
-  "description": "Free, keyless MCP server with 50 read-only blockchain tools across Bitcoin, Ethereum, and Mezo. No local installation required.",
+  "version": "0.8.0",
+  "description": "Free, keyless MCP server with 65 read-only blockchain tools across Bitcoin, Ethereum, and Mezo. No local installation required.",
   "author": {
     "name": "Boar Network",
     "url": "https://boar.network"
